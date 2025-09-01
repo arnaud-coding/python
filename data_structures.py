@@ -1,4 +1,4 @@
-from utilities import print_title
+from utilities import print_result, print_title
 
 
 def demo_lists():
