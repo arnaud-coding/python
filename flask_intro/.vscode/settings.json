@@ -1,5 +1,11 @@
 {
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "prettier.printWidth": 120,
+  "prettier.requireConfig": true,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
   }
 }

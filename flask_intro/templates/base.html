@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <!-- Définit le bloc head : les pages qui vont étendre cette page peuvent fournir l'implémentation de ce bloc -->
+  {% block head %}{% endblock %}
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="{{ url_for('index') }}"> The App </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto">
+            <!-- Links to static pages -->
+            <li class="nav-item">
+              <a class="nav-link btn mybtn" href="{{ url_for('index') }}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn mybtn" href="{{ url_for('devices') }}">Devices</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn mybtn" href="{{ url_for('device_data') }}">Device Data</a>
+            </li>
+            <!-- Link to a dynamic page (pass a name) -->
+            <li class="nav-item">
+              <a class="nav-link btn mybtn" href="{{ url_for('hello', name='Arnaud') }}">Say hello to Arnaud</a>
+            </li>
+            <!-- Or use the server-side redirect route -->
+            <li class="nav-item">
+              <a class="nav-link btn mybtn" href="{{ url_for('goto_devices') }}">Go to devices (redirect) </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main centered container -->
+  <main class="container my-4">
+    <!-- Définit le bloc content : les pages qui vont étendre cette page peuvent fournir l'implémentation de ce bloc -->
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="bg-light text-center text-lg-start mt-4">
+    <div class="text-center p-3">
+      © 2025 Copyright:
+      <a class="text-dark" href="#">example.com</a>
+    </div>
+  </footer>
+  <!-- Bootstrap JS bundle -->
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+<!-- Implémente le bloc content de la page de base -->
+{% block content %}
+<p>Bloc commun à toutes les pages devices</p>
+<!-- Définit le bloc devices_content : les pages qui vont étendre cette page peuvent fournir l'implémentation de ce bloc -->
+{% block devices_content %}{% endblock %}
+{% endblock %}

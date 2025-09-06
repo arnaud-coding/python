@@ -1,33 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devices</title>
-</head>
-<body>
-    <h1>Device List</h1>
-     <a href="{{url_for('welcome')}}">Back to welcome</a>
-    <ul>
-        <li>Diamond Kevin</li>
-        <li>name: "Diamond Loïc", ip: "10.130.3.158", status: "analyzing"</li>
-    </ul>
-    <h3>TODO :</h3>
-    <ul>
-        <li>Faire marcher la nav avec les boutons</li>        
+{% extends 'devices-base.html' %} 
+
+{% block head %}
+<title>Devices</title>
+{% endblock %}
+
+{% block devices_content %}
+<div class="card">
+    <div class="card-body">
+      <h1 class="card-title">Device List</h1>
+      <a class="btn mybtn mb-3" href="{{ url_for('index') }}">Back to Home</a>
+
+      <ul class="list-group mb-3">
+        <li class="list-group-item">Diamond Kevin</li>
+        <li class="list-group-item">Diamond Loïc — ip: 10.130.3.158 — status: analyzing</li>
+      </ul>
+
+      <h3>TODO :</h3>
+      <ul>
+        <li>Faire marcher la nav avec les boutons</li>
         <li>Afficher un menu de navigation</li>
         <li>Définir une classe Device avec 3 propriétés : name, ip, status</li>
-        <li>Dans cette page :</li>
         <li>
-            <ul>
-                <li>Créer une instance de Device pour diamond Loic</li>
-                <li>Afficher cet objet en utilisant un composant qui sera appelé Device_line</li>
-            </ul> 
+          Dans cette page :
+          <ul>
+            <li>Créer une instance de Device pour diamond Loic</li>
+            <li>Afficher cet objet en utilisant un composant qui sera appelé Device_line</li>
+          </ul>
         </li>
-        <li>Faire une page pour afficher des pokemon (obtenus via api)</li>
-        <li>Faire un backend API qui renvoie des données hardcodées</li>
-        <li>modifier le BE pour utiliser un fichier JSON à la place des données</li>
-        <li>modifier le BE pour utiliser Alchemy a la place du fichier JSON</li>
-    </ul>
-</body>
-</html>
+        <li>Page pour afficher des pokemon (via API)</li>
+        <li>Backend API qui renvoie des données hardcodées</li>
+        <li>Utiliser un fichier JSON au lieu des données codées</li>
+        <li>Remplacer par SQLAlchemy plus tard</li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}
