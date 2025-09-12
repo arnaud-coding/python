@@ -1,0 +1,24 @@
+{% extends 'devices-base.html' %}
+
+{% block head %}
+<title>Add Device Form</title>
+{% endblock %}
+
+{% block devices_content %}
+<h1 class="text-center">Add a device</h1>
+<form action="/devices" method="post" class="card mt-5 mx-auto w-50 p-3 bg-light">
+    <div class="mb-3">
+        <label for="name" class="form-label">Name :</label>
+        <input type="text" class="form-control" name="name" id="name" placeholder="Device Name" />
+    </div>
+    <div class="mb-3">
+        <label for="ip" class="form-label">IP :</label>
+        <input type="text" class="form-control" name="ip" id="ip" placeholder="Device IP addresss" />
+    </div>
+    <div class="mb-3">
+        <label for="status" class="form-label">Status :</label>
+        <input type="text" class="form-control" name="status" id="status" placeholder="Device Status" />
+    </div>
+    <button type="submit" class="btn mybtn ">Add Device</button>
+</form>
+{% endblock %}
