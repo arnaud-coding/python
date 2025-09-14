@@ -31,13 +31,13 @@ def hello(name: str):
     return render_template("hello.html", name=name)
 
 
-@app.route("/devices", methods=["POST", "GET", "DELETE"])
+@app.route("/devices", methods=["POST", "GET"])
 def devices():
     if request.method == "POST":
         device_name = request.form["name"]
         device_ip = request.form["ip"]
         device_status = request.form["status"]
-        new_device = Device(name=device_name, ip=device_ip, status=device_status)
+        new_device = Device(name=device_name, ip=device_ip, status=device_status)  # type: ignore
         print(f" add device ${new_device} to DB")
 
         try:

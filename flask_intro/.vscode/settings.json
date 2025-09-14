@@ -8,4 +8,13 @@
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
+   "material-icon-theme.languages.associations": {
+        "jinja-html": "html"
+    },
+    "files.associations": {
+    "*.html": "jinja-html"
+   },
+    "emmet.includeLanguages": {
+        "jinja-html": "html"
+    }
 }

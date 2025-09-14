@@ -10,30 +10,33 @@
       <h1 class="card-title">Devices List</h1>
       <a class="btn mybtn mb-3" href="{{ url_for('home') }}">Back to Home</a>
 
-      <table class="table table-bordered table-striped text-center align-middle">
-         <thead>
-            <tr>
-               <th scope="col">#</th>
-               <th scope="col">IP</th>
-               <th scope="col">Status</th>
-               <th scope="col">Actions</th>
-            </tr>
-         </thead>
-         <tbody>
-            {% for device in devices %}
-            <tr>
-               <th scope="row">{{ device.name }}</th>
-               <td>{{ device.ip }}</td>
-               <td>{{ device.status }}</td>
-               <td>
-                  <a href="{{ url_for('delete_device', device_id=device.id) }}" class="btn mybtn mb-3">Delete</a>
-                  <a href="{{ url_for('updateForm', device_id=device.id) }}" class="btn mybtn mb-3">Update</a>
-               </td>
-            </tr>
-            {% endfor %}
-         </tbody>
-      </table>
-
+      {% if devices|length < 1 %} 
+      <h2 class="text-center">There are no devices. Create one !</h2>
+      {% else %}
+         <table class="table table-bordered table-striped text-center align-middle">
+            <thead>
+               <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">IP</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Actions</th>
+               </tr>
+            </thead>
+            <tbody>
+               {% for device in devices %}
+               <tr>
+                  <th scope="row">{{ device.name }}</th>
+                  <td>{{ device.ip }}</td>
+                  <td>{{ device.status }}</td>
+                  <td>
+                     <a href="{{ url_for('delete_device', device_id=device.id) }}" class="btn mybtn mb-3">Delete</a>
+                     <a href="{{ url_for('updateForm', device_id=device.id) }}" class="btn mybtn mb-3">Update</a>
+                  </td>
+               </tr>
+               {% endfor %}
+            </tbody>
+         </table>
+      {% endif %}
    </div>
 </div>
 {% endblock %}
