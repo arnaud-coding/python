@@ -26,8 +26,8 @@
                <td>{{ device.ip }}</td>
                <td>{{ device.status }}</td>
                <td>
-                  <a href="#" class="btn mybtn mb-3">Delete</a>
-                  <a href="#" class="btn mybtn mb-3">Update</a>
+                  <a href="{{ url_for('delete_device', device_id=device.id) }}" class="btn mybtn mb-3">Delete</a>
+                  <a href="{{ url_for('updateForm', device_id=device.id) }}" class="btn mybtn mb-3">Update</a>
                </td>
             </tr>
             {% endfor %}

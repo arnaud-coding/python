@@ -1,0 +1,27 @@
+{% extends 'devices-base.html' %}
+
+{% block head %}
+<title>update Device Form</title>
+{% endblock %}
+
+{% block devices_content %}
+<h1 class="text-center">Update a given device</h1>
+<form action="/update/{{device.id}}" method="post" class="card mt-5 mx-auto w-50 p-3 bg-light">
+    <div class="mb-3">
+        <label for="name" class="form-label">Name :</label>
+        <input type="text" class="form-control" name="name" id="name" placeholder="Device Name"
+            value="{{device.name}}" />
+    </div>
+    <div class="mb-3">
+        <label for="ip" class="form-label">IP :</label>
+        <input type="text" class="form-control" name="ip" id="ip" placeholder="Device IP addresss"
+            value="{{device.ip}}" />
+    </div>
+    <div class="mb-3">
+        <label for="status" class="form-label">Status :</label>
+        <input type="text" class="form-control" name="status" id="status" placeholder="Device Status"
+            value="{{device.status}}" />
+    </div>
+    <button type="submit" class="btn mybtn ">Update Device</button>
+</form>
+{% endblock %}
